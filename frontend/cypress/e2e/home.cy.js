@@ -1,15 +1,19 @@
-/* global describe, it,beforeEach cy */
-describe("button handle", () => {
+/* global describe, it,beforeEach,cy */
+
+describe("Navigation", () => {
   beforeEach(() => {
     cy.visit("http://localhost:5173/");
   });
 
-  it("button click", () => {
-    cy.get("button").contains("click").click();
-    cy.contains("jeevan");
+  it("should display the homepage", () => {
+    cy.contains("this is home page").should("be.visible");
   });
-  it("change button click", () => {
-    cy.get("button").contains("change").click();
-    cy.contains("sathish");
+
+  it("should navigate to the about page", () => {
+    cy.contains("About").click();
+
+    cy.url().should("include", "/about");
+
+    cy.contains("About page this is").should("be.visible");
   });
 });

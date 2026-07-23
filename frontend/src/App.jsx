@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Nav from "./layout/Nav";
 
 const App = () => {
-  const [name, setName] = useState("");
   return (
-    <div>
-      <button onClick={() => setName("jeevan")}>click</button>
-      <h1>{name}</h1>
-      <button onClick={() => setName("sathish")}>change</button>
+    <div className="w-full h-screen">
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 };
