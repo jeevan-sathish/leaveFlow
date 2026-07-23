@@ -1,4 +1,4 @@
-/* global describe, it,beforeEach,cy */
+/* global describe, it,beforeEach,cy,expect */
 
 describe("Navigation", () => {
   beforeEach(() => {
@@ -13,7 +13,12 @@ describe("Navigation", () => {
     cy.contains("About").click();
 
     cy.url().should("include", "/about");
+    cy.get("button").contains("call").click();
 
-    cy.contains("About page this is").should("be.visible");
+    cy.request("GET", "http://localhost:3000/data").then((response) => {
+      expect(response.status).to.eq(200);
+      expect(response.body.message).to.eq("hello from express");
+    });
+    cy.contains("hello from express").should("be.visible");
   });
 });
