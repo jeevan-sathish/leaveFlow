@@ -41,13 +41,13 @@ const Login = () => {
     <div className="w-full h-screen flex justify-center items-center">
       <form
         onSubmit={handleSubmit}
-        className="w-[20%] h-auto p-3 rounded-2xl flex flex-col gap-2 bg-pink-200"
+        className="w-[90%] md:w-[40%] lg:w-[30%] h-auto p-3 rounded-2xl flex flex-col gap-2 bg-pink-200"
       >
         <h1 className="text-[24px] text-center font-medium ">
           LeaveFlow LogIn
         </h1>
         <div className="flex flex-col">
-          <Label />
+          <Label name="user name" />
           <InputField
             placeholder="enter your name:"
             name="name"
@@ -56,7 +56,7 @@ const Login = () => {
           />
         </div>
         <div className="flex flex-col">
-          <Label />
+          <Label name="user email" />
           <InputField
             placeholder="enter your email:"
             name="email"
@@ -65,7 +65,7 @@ const Login = () => {
           />
         </div>
         <div className="flex flex-col">
-          <Label />
+          <Label name="user password" />
           <InputField
             placeholder="enter your password:"
             name="password"
@@ -76,7 +76,8 @@ const Login = () => {
         <Button type="submit" />
       </form>
 
-      <p>{userData?.detail.user_name}</p>
+      <p>{userData?.detail?.user_name}</p>
+      <p>{userData?.detail?.role}</p>
     </div>
   );
 };

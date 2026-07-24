@@ -8,7 +8,7 @@ import {
 
 async function verifyUserExist(name, email, password) {
   const existing_user = await pool.query(
-    "SELECT id,name,email from users WHERE email=$1",
+    "SELECT id,name,email,role from users WHERE email=$1",
     [email],
   );
   if (existing_user.rows.length > 0) {
@@ -18,6 +18,7 @@ async function verifyUserExist(name, email, password) {
 
     return {
       status: true,
+      role: existing_user.rows[0].role,
       result: "account exist",
       access_token: access_token,
       refresh_token: refresh_token,
@@ -32,6 +33,7 @@ async function verifyUserExist(name, email, password) {
 
     return {
       status: true,
+      role: existing_user.role,
       result: "account was created",
     };
   }

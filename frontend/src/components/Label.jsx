@@ -1,5 +1,5 @@
-const Label = ({ label }) => {
-  return <label>{label}</label>;
+const Label = ({ name }) => {
+  return <label>{name}</label>;
 };
 
 export default Label;

@@ -7,6 +7,7 @@ async function loginController(req, res) {
       detail: {
         user_name: name,
         user_email: email,
+        role: isUserExist.role,
         message_status: isUserExist.result,
         access_token: isUserExist.access_token,
         refresh_token: isUserExist.refresh_token,
@@ -17,6 +18,7 @@ async function loginController(req, res) {
       detail: {
         user_name: name,
         user_email: email,
+        role: isUserExist.role,
         message_status: isUserExist.result,
       },
     });

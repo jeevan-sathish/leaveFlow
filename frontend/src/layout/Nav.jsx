@@ -9,7 +9,7 @@ const Nav = () => {
     window.location.reload();
   }
   return (
-    <div className="w-full h-14 flex gap-5 justify-center items-center bg-pink-300 absolute top-0 z-50">
+    <div className=" flex  w-full h-14 gap-5   justify-center items-center bg-pink-300 absolute top-0 z-50">
       <Link to="/">
         <butto>Home</butto>
       </Link>
