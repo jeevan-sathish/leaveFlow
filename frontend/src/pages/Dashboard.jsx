@@ -1,11 +1,11 @@
 import React from "react";
 
-const About = () => {
+const Dashboard = () => {
   return (
     <div className="w-full h-screen flex justify-center items-center">
-      About
+      Dashboard
     </div>
   );
 };
 
-export default About;
+export default Dashboard;

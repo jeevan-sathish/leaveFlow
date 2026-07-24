@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { messageRoute } from "./routes/cypress.messageRoute.js";
+import { loginRoute } from "./routes/auth.loginRoute.js";
 
 const app = express();
 
@@ -11,6 +11,6 @@ app.get("/", (req, res) => {
   res.send("Welcome");
 });
 
-app.use("/", messageRoute);
+app.use(loginRoute);
 
 export default app;

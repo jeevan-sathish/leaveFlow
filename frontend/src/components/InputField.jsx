@@ -1,10 +1,19 @@
-const InputField = ({ placeholder, name, handleChange }) => {
+const InputField = ({
+  type = "text",
+  placeholder,
+  name,
+  value,
+  handleChange,
+}) => {
   return (
     <input
-      className="w-[90%] h-[40px] rounded-2xl pl-4 border border-black"
+      className="w-full h-12.5  rounded-2xl pl-4 border border-black"
+      type={type}
       placeholder={placeholder}
       name={name}
+      value={value}
       onChange={handleChange}
+      required
     />
   );
 };
